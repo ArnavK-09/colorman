@@ -109,7 +109,7 @@ if (blpFiles.length === 0) {
 
 await mkdir(blueprintDir, { recursive: true });
 
-await $`blueprint-compiler batch-compile --minify ${blueprintDir} ${srcDir} ${blpFiles}`;
+await $`blueprint-compiler batch-compile ${blueprintDir} ${srcDir} ${blpFiles}`;
 
 await $`glib-compile-resources --sourcedir=${blueprintDir} --target=${join(buildDir, "colorman.data.gresource")} ${join(srcDir, "org.gnome.Colorman.data.gresource.xml")}`;
 await $`glib-compile-resources --sourcedir=${srcDir} --target=${join(buildDir, "colorman.src.gresource")} ${join(srcDir, "org.gnome.Colorman.src.gresource.xml")}`;
