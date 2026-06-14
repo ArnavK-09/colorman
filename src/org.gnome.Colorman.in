@@ -4,8 +4,10 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import { exit, programArgs } from 'system';
 
-const exe = GLib.file_read_link('/proc/self/exe');
-const prefix = GLib.path_get_dirname(GLib.path_get_dirname(exe));
+const [scriptPath] = GLib.filename_from_uri(import.meta.url);
+const prefix =
+  GLib.getenv('COLORMAN_PREFIX') ??
+  GLib.path_get_dirname(GLib.path_get_dirname(scriptPath));
 const pkgdatadir = GLib.build_filenamev([prefix, 'share', '@PACKAGE_NAME@']);
 
 for (const name of ['org.gnome.Colorman.src', 'org.gnome.Colorman.data']) {
