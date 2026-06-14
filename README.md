@@ -30,9 +30,7 @@ org.gnome.Colorman
 ### Manual — pre-built bundle
 
 1. Open **[GitHub Releases → v0.0.70](https://github.com/ArnavK-09/colorman/releases/tag/v0.0.70)**
-2. Download the tarball for your CPU:
-   - `colorman-0.0.70-linux-x86_64.tar.gz`
-   - `colorman-0.0.70-linux-aarch64.tar.gz`
+2. Download `colorman-0.0.70-linux-x86_64.tar.gz` (aarch64 builds ship via GitHub Actions on future tags)
 3. Extract and install:
 
 ```bash
