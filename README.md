@@ -9,20 +9,47 @@
 >
 > **Colorman** is a native GNOME 50 desktop app for browsing Tailwind CSS v4 colors and inspecting them in multiple formats (hex, RGB, HSL, OKLCH). It is built with **TypeScript**, **GJS**, **GTK 4**, and **libadwaita**, with UI defined in **Blueprint** (`.blp`) and bundled via **GResource**. The project started from a minimal GNOME TypeScript template and was reshaped into a focused two-page app: a scrollable color grid and a synced color inspector with reverse Tailwind token lookup.
 
-## ⬇️ Download & install (fastest)
+## ⬇️ Download & install
 
-**Release:** [`v0.0.69`](https://github.com/ArnavK-09/colorman/releases/tag/v0.0.69) · **License:** [Unlicense](LICENSE)
+**Version `0.0.69`** · **License: [Unlicense](LICENSE)**
 
-**Build once** (needs `bun`, `gjs`, `gtk4`, `libadwaita`, `meson`, `ninja`, `blueprint-compiler`):
+No build tools needed — only **GNOME runtime** (`gjs`, `gtk4`, `libadwaita`).
+
+### Fastest — one command
 
 ```bash
-curl -L https://github.com/ArnavK-09/colorman/archive/refs/tags/v0.0.69.tar.gz | tar xz
-cd colorman-0.0.69
-bun install && bun run install-app
+curl -fsSL https://github.com/ArnavK-09/colorman/releases/download/v0.0.69/install.sh | bash
+```
+
+Then open **Colorman** from Overview search, or run:
+
+```bash
 org.gnome.Colorman
 ```
 
-Or with git:
+### Manual — pre-built bundle (like an installer)
+
+1. Open **[GitHub Releases → v0.0.69](https://github.com/ArnavK-09/colorman/releases/tag/v0.0.69)**
+2. Download the tarball for your CPU:
+   - `colorman-0.0.69-linux-x86_64.tar.gz`
+   - `colorman-0.0.69-linux-aarch64.tar.gz`
+3. Extract and install:
+
+```bash
+tar xzf colorman-0.0.69-linux-x86_64.tar.gz
+cd colorman-0.0.69-linux-x86_64
+./install.sh
+```
+
+Installs to `~/.local` (app menu + dock). System-wide: `sudo ./install.sh /usr`
+
+### Arch / CachyOS (paru)
+
+```bash
+paru -S colorman
+```
+
+### Developers — build from source
 
 ```bash
 git clone https://github.com/ArnavK-09/colorman.git
@@ -30,10 +57,9 @@ cd colorman && git checkout v0.0.69
 bun install && bun run install-app
 ```
 
-Installs to `~/.local` — find **Colorman** in Overview search or run `org.gnome.Colorman`.  
-Runtime only needs `gjs`, `gtk4`, `libadwaita` (no Bun after install).
-
 ---
+
+## 🌟 Features
 
 > **Colorman** features intro:
 
@@ -43,47 +69,7 @@ Runtime only needs `gjs`, `gtk4`, `libadwaita` (no Bun after install).
 - **TypeScript-first** – Strict typing with `@girs/*` for GJS/GTK introspection; compile to JS via `tsc`, load from GResource at runtime.
 - **Blueprint UI** – Declarative `.blp` templates compiled to GtkBuilder XML, colocated with each page’s TypeScript logic.
 - **Hot-reload dev** – `bun run dev` watches `src/` and `logo.svg`, rebuilds, and restarts the app automatically.
-- **Dual run modes** – Fast dev launcher (`gjs` + local GResource bundles) and production install via Meson to `~/.local`.
-
----
-
-## 💻 Installation
-
-> You can run **Colorman** locally with:
-
-###### Prerequisites
-
-| Tool                                                                    | Purpose                                       |
-| ----------------------------------------------------------------------- | --------------------------------------------- |
-| [Bun](https://bun.sh)                                                   | Package manager, build scripts, file watching |
-| [GJS](https://gitlab.gnome.org/GNOME/gjs)                               | GNOME JavaScript runtime                      |
-| [blueprint-compiler](https://gitlab.gnome.org/GNOME/blueprint-compiler) | Compiles `.blp` → GtkBuilder `.ui`            |
-| `glib-compile-resources`                                                | Bundles UI + JS into `.gresource` (from GLib) |
-| Meson + Ninja                                                           | Production build and install                  |
-| GTK 4 + libadwaita                                                      | GNOME UI toolkit (system packages)            |
-
-Fedora example:
-
-```bash
-sudo dnf install gjs gtk4 libadwaita meson ninja-build blueprint-compiler glib2-devel
-```
-
-###### terminal
-
-```bash
-git clone https://github.com/ArnavK-09/colorman.git
-cd colorman
-bun install
-bun run dev
-```
-
-For a system install to `~/.local` (app menu, dock icon, D-Bus activation):
-
-```bash
-bun run install-app
-```
-
-Then launch **Colorman** from the app grid or run `org.gnome.Colorman`.
+- **Dual run modes** – Pre-built GitHub release (no compile) or dev build via Meson.
 
 ---
 
@@ -420,52 +406,14 @@ bun run clean && bun run install-app
 
 ---
 
-## 📦 Distribution
-
-**Version:** `0.0.69` — tag releases as `v0.0.69`, `v0.0.70`, etc.
-
-### Install from source (any Linux)
-
-Build-time deps: `bun`, `gjs`, `gtk4`, `libadwaita`, `meson`, `ninja`, `blueprint-compiler`, `glib2`
-
-Runtime deps only: `gjs`, `gtk4`, `libadwaita` (Bun is **not** required after install)
+## 📦 Publishing (maintainers)
 
 ```bash
-git clone https://github.com/ArnavK-09/colorman.git
-cd colorman
-git checkout v0.0.69
-bun install
-bun run install-app
-org.gnome.Colorman
+bun run build:release          # creates release/*.tar.gz + install.sh
+git tag v0.0.69 && git push origin v0.0.69   # triggers GitHub Actions release
 ```
 
-Or from a release tarball:
-
-```bash
-curl -L https://github.com/ArnavK-09/colorman/archive/refs/tags/v0.0.69.tar.gz | tar xz
-cd colorman-0.0.69
-bun install && bun run install-app
-```
-
-### Verify a clean install
-
-```bash
-bun run clean
-bun run install-app
-org.gnome.Colorman
-```
-
-### Publishing checklist (maintainers)
-
-| Step | Command / action |
-|------|------------------|
-| Align version | `package.json`, `meson.build`, `src/version.ts`, `metainfo.xml.in` |
-| Tag release | `git tag v0.0.69 && git push origin v0.0.69` |
-| GitHub Release | Create release from tag; attach notes + screenshot URLs |
-| Flatpak | Add manifest → submit PR to [Flathub](https://github.com/flathub/flathub) |
-| AUR | Publish `PKGBUILD` pointing at `v0.0.69` tarball |
-
-Screenshots for Flathub/AppStream live in `data/org.gnome.Colorman.metainfo.xml.in` (same URLs as below).
+Release assets: pre-built `colorman-0.0.69-linux-*.tar.gz` + `install.sh` (no compile for users). License: **Unlicense**.
 
 ---
 

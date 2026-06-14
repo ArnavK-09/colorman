@@ -1,0 +1,16 @@
+pkgname=colorman
+pkgver=0.0.69
+pkgrel=1
+pkgdesc="GNOME app to browse Tailwind CSS v4 colors and inspect them in multiple formats"
+arch=('x86_64' 'aarch64')
+url="https://github.com/ArnavK-09/colorman"
+license=('Unlicense')
+depends=('gjs' 'gtk4' 'libadwaita')
+source=("colorman-${pkgver}.tar.gz::https://github.com/ArnavK-09/colorman/releases/download/v${pkgver}/colorman-${pkgver}-linux-${CARCH}.tar.gz")
+sha256sums_x86_64=('SKIP')
+sha256sums_aarch64=('SKIP')
+
+package() {
+  cd "$srcdir/colorman-$pkgver-linux-$CARCH"
+  ./install.sh "$pkgdir/usr"
+}

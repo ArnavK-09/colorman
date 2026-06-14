@@ -4,7 +4,9 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import { exit, programArgs } from 'system';
 
-const pkgdatadir = GLib.build_filenamev(['@datadir@', '@PACKAGE_NAME@']);
+const exe = GLib.file_read_link('/proc/self/exe');
+const prefix = GLib.path_get_dirname(GLib.path_get_dirname(exe));
+const pkgdatadir = GLib.build_filenamev([prefix, 'share', '@PACKAGE_NAME@']);
 
 for (const name of ['org.gnome.Colorman.src', 'org.gnome.Colorman.data']) {
   const path = GLib.build_filenamev([pkgdatadir, `${name}.gresource`]);

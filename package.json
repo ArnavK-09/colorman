@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:resources": "bun run scripts/build-resources.ts",
+    "build:release": "bash scripts/build-release.sh",
     "run": "bun run build && COLORMAN_INSTALL_DEV_ICONS=1 bun run build:resources && COLORMAN_ROOT=\"$PWD\" gjs -m scripts/launcher.mjs",
     "start": "bun run run",
     "dev": "bun run scripts/dev.ts",
