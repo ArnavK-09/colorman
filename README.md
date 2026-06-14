@@ -9,7 +9,31 @@
 >
 > **Colorman** is a native GNOME 50 desktop app for browsing Tailwind CSS v4 colors and inspecting them in multiple formats (hex, RGB, HSL, OKLCH). It is built with **TypeScript**, **GJS**, **GTK 4**, and **libadwaita**, with UI defined in **Blueprint** (`.blp`) and bundled via **GResource**. The project started from a minimal GNOME TypeScript template and was reshaped into a focused two-page app: a scrollable color grid and a synced color inspector with reverse Tailwind token lookup.
 
-## 🌟 Features
+## ⬇️ Download & install (fastest)
+
+**Release:** [`v0.0.69`](https://github.com/ArnavK-09/colorman/releases/tag/v0.0.69) · **License:** [Unlicense](LICENSE)
+
+**Build once** (needs `bun`, `gjs`, `gtk4`, `libadwaita`, `meson`, `ninja`, `blueprint-compiler`):
+
+```bash
+curl -L https://github.com/ArnavK-09/colorman/archive/refs/tags/v0.0.69.tar.gz | tar xz
+cd colorman-0.0.69
+bun install && bun run install-app
+org.gnome.Colorman
+```
+
+Or with git:
+
+```bash
+git clone https://github.com/ArnavK-09/colorman.git
+cd colorman && git checkout v0.0.69
+bun install && bun run install-app
+```
+
+Installs to `~/.local` — find **Colorman** in Overview search or run `org.gnome.Colorman`.  
+Runtime only needs `gjs`, `gtk4`, `libadwaita` (no Bun after install).
+
+---
 
 > **Colorman** features intro:
 
