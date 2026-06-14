@@ -23,6 +23,9 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2
 
+      - name: Install JS dependencies
+        run: bun install
+
       - name: Install build dependencies
         run: |
           sudo apt-get update
