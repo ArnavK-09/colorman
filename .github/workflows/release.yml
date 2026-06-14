@@ -30,8 +30,15 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            meson ninja-build blueprint-compiler gjs \
-            libgtk-4-dev libadwaita-1-dev libglib2.0-dev
+            meson ninja-build python3 python3-gi gjs \
+            libgtk-4-dev libadwaita-1-dev libglib2.0-dev gir1.2-gtk-4.0
+
+      - name: Install blueprint-compiler
+        run: |
+          git clone --depth 1 https://gitlab.gnome.org/GNOME/blueprint-compiler.git /tmp/blueprint-compiler
+          sudo meson setup /tmp/blueprint-compiler/_build /tmp/blueprint-compiler --prefix=/usr
+          sudo meson compile -C /tmp/blueprint-compiler/_build
+          sudo meson install -C /tmp/blueprint-compiler/_build
 
       - name: Build release bundle
         run: bash scripts/build-release.sh
