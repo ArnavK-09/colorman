@@ -58,3 +58,4 @@ jobs:
           files: |
             artifacts/colorman-*-linux-*.tar.gz
             artifacts/install.sh
+            artifacts/uninstall.sh

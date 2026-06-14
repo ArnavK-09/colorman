@@ -26,12 +26,15 @@ DESTDIR="$staging" meson install -C _build
 
 cp -a "$staging/usr" "$bundle/"
 cp "$root/scripts/install-release.sh" "$bundle/install.sh"
-chmod +x "$bundle/install.sh"
+cp "$root/scripts/uninstall-release.sh" "$bundle/uninstall.sh"
+chmod +x "$bundle/install.sh" "$bundle/uninstall.sh"
 
 tar -C "$release_dir" -czf "${release_dir}/${bundle_name}.tar.gz" "$bundle_name"
 cp "$root/scripts/curl-install.sh" "${release_dir}/install.sh"
-chmod +x "${release_dir}/install.sh"
+cp "$root/scripts/uninstall-release.sh" "${release_dir}/uninstall.sh"
+chmod +x "${release_dir}/install.sh" "${release_dir}/uninstall.sh"
 
 echo "Release artifacts:"
 echo "  ${release_dir}/${bundle_name}.tar.gz"
 echo "  ${release_dir}/install.sh"
+echo "  ${release_dir}/uninstall.sh"

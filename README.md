@@ -57,6 +57,40 @@ cd colorman && git checkout v0.0.69
 bun install && bun run install-app
 ```
 
+### Uninstall
+
+**One command** (default `~/.local`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ArnavK-09/colorman/master/scripts/uninstall-release.sh | bash
+```
+
+Or from a release bundle folder:
+
+```bash
+./uninstall.sh
+```
+
+System-wide install (`/usr`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ArnavK-09/colorman/master/scripts/uninstall-release.sh | sudo bash -s -- /usr
+```
+
+**paru / pacman:**
+
+```bash
+paru -R colorman
+```
+
+**Local dev install:**
+
+```bash
+bun run uninstall
+```
+
+Then restart GNOME Shell (**Alt+F2** → `r`) if the app still appears in search.
+
 ---
 
 ## 🌟 Features
