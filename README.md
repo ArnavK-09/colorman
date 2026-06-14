@@ -402,7 +402,7 @@ bun run clean && bun run install-app
 
 | Color Palette                             | Color Inspector                           |
 | ----------------------------------------- | ----------------------------------------- |
-| ![Demo](https://github.com/ArnavK-09.png) | ![Demo](https://github.com/ArnavK-09.png) |
+| ![Demo](https://github.com/user-attachments/assets/9b9f7a03-41e3-47d1-b58b-475463540fb1) | ![Demo](https://github.com/user-attachments/assets/3df26cae-7036-4659-ae0c-96c398095dce) |
 
 ---
 
