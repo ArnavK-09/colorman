@@ -43,11 +43,6 @@ cd colorman-0.0.69-linux-x86_64
 
 Installs to `~/.local` (app menu + dock). System-wide: `sudo ./install.sh /usr`
 
-### Arch / CachyOS (paru)
-
-```bash
-paru -S colorman
-```
 
 ### Developers — build from source
 
@@ -75,12 +70,6 @@ System-wide install (`/usr`):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ArnavK-09/colorman/master/scripts/uninstall-release.sh | sudo bash -s -- /usr
-```
-
-**paru / pacman:**
-
-```bash
-paru -R colorman
 ```
 
 **Local dev install:**
