@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Colorman
+Exec=org.gnome.Colorman
+Icon=org.gnome.Colorman
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=false
+DBusActivatable=true

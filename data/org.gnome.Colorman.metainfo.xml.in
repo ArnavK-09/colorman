@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.gnome.Colorman</id>
+  <metadata_license>Unlicense</metadata_license>
+  <project_license>Unlicense</project_license>
+
+  <name>Colorman</name>
+  <summary>Color management application</summary>
+  <description>
+    <p>Colorman is a GNOME application written in TypeScript with GJS.</p>
+  </description>
+
+  <launchable type="desktop-id">org.gnome.Colorman.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.0.69" date="2026-06-15"/>
+  </releases>
+</component>

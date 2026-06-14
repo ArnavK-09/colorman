@@ -1,0 +1,6 @@
+node_modules/
+dist/
+build/
+_build/
+bun.lock
+/subprojects/blueprint-compiler

@@ -1,0 +1,95 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ColorInspectorPage: Gtk.Box {
+  orientation: vertical;
+  hexpand: true;
+  vexpand: true;
+
+  ScrolledWindow {
+    vexpand: true;
+    styles ["edge-to-edge"]
+
+    child: Box content {
+      orientation: vertical;
+      spacing: 24;
+      margin-top: 24;
+      margin-bottom: 24;
+      margin-start: 32;
+      margin-end: 32;
+
+      Box preview_wrap {
+        orientation: vertical;
+        spacing: 8;
+        halign: center;
+
+        Box color_preview {
+          width-request: 220;
+          height-request: 220;
+          css-classes: ["card", "color-preview-swatch"];
+        }
+
+        Label token_display {
+          label: _("Select a color");
+          styles ["title-2"]
+        }
+      }
+
+      Adw.PreferencesGroup formats_group {
+        title: _("Color formats");
+
+        Adw.EntryRow hex_row {
+          title: _("Hex");
+        }
+
+        Adw.EntryRow rgb_row {
+          title: _("RGB");
+        }
+
+        Adw.EntryRow hsl_row {
+          title: _("HSL");
+        }
+
+        Adw.EntryRow oklch_row {
+          title: _("OKLCH");
+        }
+
+        Adw.EntryRow token_row {
+          title: _("Token");
+        }
+      }
+
+      Adw.PreferencesGroup meta_group {
+        title: _("Metadata");
+
+        Adw.ActionRow family_row {
+          title: _("Family");
+        }
+
+        Adw.ActionRow shade_row {
+          title: _("Shade");
+        }
+
+        Adw.ActionRow bg_row {
+          title: _("Background");
+        }
+
+        Adw.ActionRow text_row {
+          title: _("Text");
+        }
+
+        Adw.ActionRow border_row {
+          title: _("Border");
+        }
+
+        Adw.ActionRow fill_row {
+          title: _("Fill");
+        }
+
+        Adw.ActionRow stroke_row {
+          title: _("Stroke");
+        }
+      }
+    };
+  }
+}

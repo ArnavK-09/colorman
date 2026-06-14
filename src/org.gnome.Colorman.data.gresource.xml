@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/Colorman">
+    <file preprocess="xml-stripblanks">window/window.ui</file>
+    <file preprocess="xml-stripblanks">pages/color-pallete/index.ui</file>
+    <file preprocess="xml-stripblanks">pages/color-inspector/index.ui</file>
+  </gresource>
+</gresources>

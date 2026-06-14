@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/Colorman/js">
+    <file alias="main.js">../dist/main.js</file>
+    <file alias="application.js">../dist/application.js</file>
+    <file alias="window/window.js">../dist/window/window.js</file>
+    <file alias="pages/color-pallete/index.js">../dist/pages/color-pallete/index.js</file>
+    <file alias="data/tailwind-colors.js">../dist/data/tailwind-colors.js</file>
+    <file alias="color/convert.js">../dist/color/convert.js</file>
+    <file alias="color/tailwind-lookup.js">../dist/color/tailwind-lookup.js</file>
+    <file alias="pages/color-inspector/index.js">../dist/pages/color-inspector/index.js</file>
+  </gresource>
+</gresources>

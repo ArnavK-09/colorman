@@ -1,0 +1,24 @@
+using Gtk 4.0;
+
+template $ColorPalletePage: Gtk.Box {
+  orientation: vertical;
+  hexpand: true;
+  vexpand: true;
+
+  ScrolledWindow {
+    vexpand: true;
+    hexpand: true;
+    styles ["edge-to-edge"]
+
+    child: Box palette_content {
+      orientation: vertical;
+      spacing: 10;
+      margin-top: 20;
+      margin-bottom: 20;
+      margin-start: 24;
+      margin-end: 24;
+      vexpand: true;
+      hexpand: true;
+    };
+  }
+}
