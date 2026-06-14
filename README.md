@@ -396,6 +396,55 @@ bun run clean && bun run install-app
 
 ---
 
+## 📦 Distribution
+
+**Version:** `0.0.69` — tag releases as `v0.0.69`, `v0.0.70`, etc.
+
+### Install from source (any Linux)
+
+Build-time deps: `bun`, `gjs`, `gtk4`, `libadwaita`, `meson`, `ninja`, `blueprint-compiler`, `glib2`
+
+Runtime deps only: `gjs`, `gtk4`, `libadwaita` (Bun is **not** required after install)
+
+```bash
+git clone https://github.com/ArnavK-09/colorman.git
+cd colorman
+git checkout v0.0.69
+bun install
+bun run install-app
+org.gnome.Colorman
+```
+
+Or from a release tarball:
+
+```bash
+curl -L https://github.com/ArnavK-09/colorman/archive/refs/tags/v0.0.69.tar.gz | tar xz
+cd colorman-0.0.69
+bun install && bun run install-app
+```
+
+### Verify a clean install
+
+```bash
+bun run clean
+bun run install-app
+org.gnome.Colorman
+```
+
+### Publishing checklist (maintainers)
+
+| Step | Command / action |
+|------|------------------|
+| Align version | `package.json`, `meson.build`, `src/version.ts`, `metainfo.xml.in` |
+| Tag release | `git tag v0.0.69 && git push origin v0.0.69` |
+| GitHub Release | Create release from tag; attach notes + screenshot URLs |
+| Flatpak | Add manifest → submit PR to [Flathub](https://github.com/flathub/flathub) |
+| AUR | Publish `PKGBUILD` pointing at `v0.0.69` tarball |
+
+Screenshots for Flathub/AppStream live in `data/org.gnome.Colorman.metainfo.xml.in` (same URLs as below).
+
+---
+
 ## 📷 Screenshots
 
 > Here's a working and expected screenshot of Colorman

@@ -5,6 +5,6 @@ Icon=org.gnome.Colorman
 Terminal=false
 Type=Application
 Categories=Utility;
-Keywords=GTK;
+Keywords=color;palette;tailwind;gtk;
 StartupNotify=false
 DBusActivatable=true

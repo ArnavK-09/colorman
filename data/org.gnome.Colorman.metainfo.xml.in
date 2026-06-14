@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>org.gnome.Colorman</id>
-  <metadata_license>Unlicense</metadata_license>
+  <metadata_license>CC0-1.0</metadata_license>
   <project_license>Unlicense</project_license>
 
   <name>Colorman</name>
-  <summary>Color management application</summary>
+  <summary>Browse and inspect Tailwind CSS v4 colors on GNOME</summary>
   <description>
-    <p>Colorman is a GNOME application written in TypeScript with GJS.</p>
+    <p>
+      Colorman is a native GNOME app for browsing the Tailwind CSS v4 preset palette
+      and inspecting colors in hex, RGB, HSL, and OKLCH. Click a swatch to open the
+      inspector with synced editable fields and reverse Tailwind token lookup.
+    </p>
   </description>
+
+  <developer id="io.github.arnavk09">
+    <name>Arnav K</name>
+  </developer>
+  <url type="homepage">https://github.com/ArnavK-09/colorman</url>
+  <url type="bugtracker">https://github.com/ArnavK-09/colorman/issues</url>
+  <url type="vcs-browser">https://github.com/ArnavK-09/colorman</url>
 
   <launchable type="desktop-id">org.gnome.Colorman.desktop</launchable>
   <content_rating type="oars-1.1"/>
 
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/user-attachments/assets/9b9f7a03-41e3-47d1-b58b-475463540fb1</image>
+      <caption>Color Palette — Tailwind v4 preset grid</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/user-attachments/assets/3df26cae-7036-4659-ae0c-96c398095dce</image>
+      <caption>Color Inspector — multi-format editing and metadata</caption>
+    </screenshot>
+  </screenshots>
+
   <releases>
-    <release version="0.0.69" date="2026-06-15"/>
+    <release version="0.0.69" date="2026-06-15">
+      <description>
+        <p>Initial release: Tailwind v4 color palette, multi-format inspector, and GNOME-native shell.</p>
+      </description>
+    </release>
   </releases>
 </component>

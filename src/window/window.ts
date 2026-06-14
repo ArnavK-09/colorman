@@ -5,6 +5,7 @@ import Gtk from "gi://Gtk?version=4.0";
 import type { ColorSelection } from "../color/types.js";
 import { ColorInspectorPage } from "../pages/color-inspector/index.js";
 import { ColorPalletePage } from "../pages/color-pallete/index.js";
+import { APP_VERSION } from "../version.js";
 
 export const ColormanWindow = GObject.registerClass(
   {
@@ -48,7 +49,7 @@ export const ColormanWindow = GObject.registerClass(
       this._aboutDialog = new Adw.AboutDialog({
         application_name: "Colorman [VIBECODE]",
         application_icon: "org.gnome.Colorman",
-        version: "0.0.69",
+        version: APP_VERSION,
         developers: ["ArnavK-09", "Cursor"],
         website: "https://github.com/ArnavK-09/colorman",
         issue_url: "https://github.com/ArnavK-09/colorman/issues",
