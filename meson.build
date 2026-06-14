@@ -1,6 +1,6 @@
 project(
   'colorman',
-  version: '0.0.69',
+  version: '0.0.70',
   meson_version: '>= 1.0.0',
   default_options: ['warning_level=2', 'werror=false'],
 )

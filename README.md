@@ -11,14 +11,14 @@
 
 ## ⬇️ Download & install
 
-**Version `0.0.69`** · **License: [Unlicense](LICENSE)**
+**Version `0.0.70`** · **License: [Unlicense](LICENSE)**
 
 No build tools needed — only **GNOME runtime** (`gjs`, `gtk4`, `libadwaita`).
 
 ### Fastest — one command
 
 ```bash
-curl -fsSL https://github.com/ArnavK-09/colorman/releases/download/v0.0.69/install.sh | bash
+curl -fsSL https://github.com/ArnavK-09/colorman/releases/download/v0.0.70/install.sh | bash
 ```
 
 Then open **Colorman** from Overview search, or run:
@@ -27,55 +27,46 @@ Then open **Colorman** from Overview search, or run:
 org.gnome.Colorman
 ```
 
-### Manual — pre-built bundle (like an installer)
+### Manual — pre-built bundle
 
-1. Open **[GitHub Releases → v0.0.69](https://github.com/ArnavK-09/colorman/releases/tag/v0.0.69)**
+1. Open **[GitHub Releases → v0.0.70](https://github.com/ArnavK-09/colorman/releases/tag/v0.0.70)**
 2. Download the tarball for your CPU:
-   - `colorman-0.0.69-linux-x86_64.tar.gz`
-   - `colorman-0.0.69-linux-aarch64.tar.gz`
+   - `colorman-0.0.70-linux-x86_64.tar.gz`
+   - `colorman-0.0.70-linux-aarch64.tar.gz`
 3. Extract and install:
 
 ```bash
-tar xzf colorman-0.0.69-linux-x86_64.tar.gz
-cd colorman-0.0.69-linux-x86_64
+tar xzf colorman-0.0.70-linux-x86_64.tar.gz
+cd colorman-0.0.70-linux-x86_64
 ./install.sh
 ```
 
 Installs to `~/.local` (app menu + dock). System-wide: `sudo ./install.sh /usr`
-
-
-### Developers — build from source
-
-```bash
-git clone https://github.com/ArnavK-09/colorman.git
-cd colorman && git checkout v0.0.69
-bun install && bun run install-app
-```
 
 ### Uninstall
 
 **One command** (default `~/.local`):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ArnavK-09/colorman/master/scripts/uninstall-release.sh | bash
-```
-
-Or from a release bundle folder:
-
-```bash
-./uninstall.sh
+curl -fsSL https://github.com/ArnavK-09/colorman/releases/download/v0.0.70/uninstall.sh | bash
 ```
 
 System-wide install (`/usr`):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ArnavK-09/colorman/master/scripts/uninstall-release.sh | sudo bash -s -- /usr
+curl -fsSL https://github.com/ArnavK-09/colorman/releases/download/v0.0.70/uninstall.sh | sudo bash -s -- /usr
 ```
 
-**Local dev install:**
+From a release bundle folder: `./uninstall.sh`
+
+**Local dev install:** `bun run uninstall`
+
+### Developers — build from source
 
 ```bash
-bun run uninstall
+git clone https://github.com/ArnavK-09/colorman.git
+cd colorman && git checkout v0.0.70
+bun install && bun run install-app
 ```
 
 Then restart GNOME Shell (**Alt+F2** → `r`) if the app still appears in search.
@@ -432,11 +423,11 @@ bun run clean && bun run install-app
 ## 📦 Publishing (maintainers)
 
 ```bash
-bun run build:release          # creates release/*.tar.gz + install.sh
-git tag v0.0.69 && git push origin v0.0.69   # triggers GitHub Actions release
+bun run build:release          # creates release/*.tar.gz + install.sh + uninstall.sh
+git tag v0.0.70 && git push origin v0.0.70   # triggers GitHub Actions release
 ```
 
-Release assets: pre-built `colorman-0.0.69-linux-*.tar.gz` + `install.sh` (no compile for users). License: **Unlicense**.
+Release assets: pre-built `colorman-0.0.70-linux-*.tar.gz` + `install.sh` + `uninstall.sh` (no compile for users). License: **Unlicense**.
 
 ---
 

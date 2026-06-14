@@ -1,5 +1,5 @@
 pkgname=colorman
-pkgver=0.0.69
+pkgver=0.0.70
 pkgrel=1
 pkgdesc="GNOME app to browse Tailwind CSS v4 colors and inspect them in multiple formats"
 arch=('x86_64' 'aarch64')

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="0.0.69"
+VERSION="0.0.70"
 REPO="ArnavK-09/colorman"
 PREFIX="${PREFIX:-$HOME/.local}"
 

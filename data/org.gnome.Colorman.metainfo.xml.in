@@ -36,6 +36,11 @@
   </screenshots>
 
   <releases>
+    <release version="0.0.70" date="2026-06-15">
+      <description>
+        <p>Fix user-local installs: launcher resolves gresources from ~/.local correctly.</p>
+      </description>
+    </release>
     <release version="0.0.69" date="2026-06-15">
       <description>
         <p>Initial release: Tailwind v4 color palette, multi-format inspector, and GNOME-native shell.</p>

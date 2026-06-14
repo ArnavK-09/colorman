@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PREFIX="${PREFIX:-$HOME/.local}"
+VERSION="0.0.70"
 REPO="ArnavK-09/colorman"
+PREFIX="${PREFIX:-$HOME/.local}"
 
-curl -fsSL "https://raw.githubusercontent.com/${REPO}/master/scripts/uninstall-release.sh" | bash -s -- "$PREFIX"
+curl -fsSL "https://github.com/${REPO}/releases/download/v${VERSION}/uninstall.sh" | bash -s -- "$PREFIX"

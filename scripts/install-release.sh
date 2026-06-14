@@ -31,5 +31,5 @@ if command -v update-desktop-database >/dev/null; then
   update-desktop-database -q "$PREFIX/share/applications" 2>/dev/null || true
 fi
 
-echo "Colorman 0.0.69 installed to $PREFIX"
+echo "Colorman installed to $PREFIX"
 echo "Launch: org.gnome.Colorman"
